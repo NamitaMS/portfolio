@@ -51,9 +51,40 @@
 
         header {
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 4rem 2rem 2rem;
             margin-bottom: 3rem;
             position: relative;
+        }
+
+        .profile-photo-container {
+            margin-bottom: 2rem;
+            animation: fadeInScale 1s ease-out;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .hero-title {
@@ -63,7 +94,7 @@
             color: white;
             margin-bottom: 1rem;
             text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 1s ease-out;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
             letter-spacing: -0.02em;
         }
 
@@ -72,13 +103,13 @@
             color: rgba(255, 255, 255, 0.95);
             font-weight: 300;
             margin-bottom: 0.5rem;
-            animation: fadeInUp 1s ease-out 0.2s backwards;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
         }
 
         .hero-detail {
             font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.85);
-            animation: fadeInUp 1s ease-out 0.4s backwards;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
         }
 
         @keyframes fadeInUp {
@@ -130,11 +161,11 @@
             }
         }
 
-        .section:nth-child(1) { animation-delay: 0.1s; }
-        .section:nth-child(2) { animation-delay: 0.2s; }
-        .section:nth-child(3) { animation-delay: 0.3s; }
-        .section:nth-child(4) { animation-delay: 0.4s; }
-        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.3s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.5s; }
+        .section:nth-child(5) { animation-delay: 0.6s; }
 
         h2 {
             font-family: 'Playfair Display', serif;
@@ -381,6 +412,11 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -389,6 +425,9 @@
     
     <div class="container">
         <header>
+            <div class="profile-photo-container">
+                <img src="profile-photo.jpg" alt="Namita Sherakhane" class="profile-photo">
+            </div>
             <h1 class="hero-title">Namita Sherakhane</h1>
             <p class="hero-subtitle">Computer Science & Engineering Student</p>
             <p class="hero-detail">PES University | 2nd Semester | Tech Enthusiast</p>
